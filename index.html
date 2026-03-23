@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>CYPIS DataTelligence | Data Analytics & AI Solutions | Gulu, Uganda</title>
+    <title>CYPIS DataTelligence | AI & Data Analytics Solutions</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="CYPIS DataTelligence and Intelligent Systems - Specialized in Data Analytics, ML Models, Software Development, Web Design, and AI solutions. Based in Gulu, Uganda.">
-    <meta name="keywords" content="data analytics, machine learning, AI, software development, web design, data collection, Uganda, Gulu, intelligent systems, CYPIS">
+    <meta name="description" content="CYPIS DataTelligence - Leading provider of AI solutions, data analytics, machine learning, and intelligent systems. Transforming businesses in Uganda and beyond.">
+    <meta name="keywords" content="AI, data analytics, machine learning, software development, Uganda, Gulu, intelligent systems, CYPIS">
     <meta name="author" content="CYPIS DataTelligence">
     
     <!-- Google Fonts + Material Icons -->
@@ -17,37 +17,34 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Font Awesome for additional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'cypis-primary': '#0B3B5F',
-                        'cypis-secondary': '#1E6F5C',
-                        'cypis-accent': '#F4A261',
-                        'cypis-dark': '#2C3E50',
-                        'cypis-light': '#E9C46A',
+                        'cypis-dark': '#0A1922',
+                        'cypis-primary': '#1A4D5E',
+                        'cypis-accent': '#E86A3E',
+                        'cypis-light': '#F5F5F0',
                     },
                     fontFamily: {
                         'sans': ['Inter', 'system-ui', 'sans-serif'],
                     },
                     animation: {
-                        'fade-in': 'fadeIn 0.8s ease-out',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
                     },
                     keyframes: {
                         fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
                         },
                         slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
                         },
                     },
                 },
@@ -62,471 +59,410 @@
         html {
             scroll-behavior: smooth;
         }
-        .gradient-hero {
-            background: linear-gradient(135deg, #0B3B5F 0%, #1E6F5C 100%);
+        
+        /* Carousel Styles */
+        .carousel-slide {
+            transition: opacity 0.5s ease-in-out;
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        
+        .carousel-btn {
+            transition: all 0.3s ease;
         }
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
         }
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+        
+        .dot {
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
+        
+        .dot:hover {
+            transform: scale(1.2);
+        }
+        
         .service-card {
             transition: all 0.3s ease;
         }
+        
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
         }
-        .logo-text {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #0B3B5F 0%, #1E6F5C 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        
+        /* Stats Counter Animation */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .logo-sub {
-            font-size: 10px;
-            letter-spacing: 1px;
-        }
-        @keyframes pulse-slow {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-        }
-        .animate-pulse-slow {
-            animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        
+        .stat-number {
+            animation: countUp 0.8s ease-out;
         }
     </style>
 </head>
-<body class="bg-gray-50 antialiased">
+<body class="bg-white">
 
     <!-- Navigation -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
-        <nav class="max-w-7xl mx-auto px-6 md:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <!-- Company Logo - CYPIS as one word -->
-                <div class="flex flex-col">
-                    <div class="flex items-center">
-                        <span class="text-3xl font-black tracking-tight text-cypis-primary">CYPIS</span>
-                    </div>
-                    <div class="flex flex-col leading-tight mt-0">
-                        <span class="text-[11px] font-semibold tracking-wide text-gray-600">DataTelligence</span>
-                        <span class="text-[10px] font-medium text-gray-500 tracking-wide">& Intelligent Systems</span>
-                    </div>
+    <header class="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <nav class="max-w-7xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+    <img src="mylogo.png" alt="CYPIS Logo" class="h-12 w-auto">
+</div>
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-gradient-to-br from-cypis-primary to-cypis-accent rounded-xl flex items-center justify-center shadow-md">
+                    <span class="text-white font-bold text-xl">C</span>
+                </div>
+                <div class="ml-3">
+                    <span class="font-bold text-xl tracking-tight text-gray-900">CYPIS</span>
+                    <p class="text-xs text-gray-500 -mt-1">DataTelligence</p>
                 </div>
             </div>
-            <div class="flex gap-6 text-sm font-medium items-center">
-                <a href="#home" class="hidden md:inline-block text-gray-600 hover:text-cypis-primary transition">Home</a>
-                <a href="#services" class="hidden md:inline-block text-gray-600 hover:text-cypis-primary transition">Services</a>
-                <a href="#about" class="hidden md:inline-block text-gray-600 hover:text-cypis-primary transition">About</a>
-                <a href="#contact" class="bg-cypis-primary text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md hover:bg-cypis-secondary transition flex items-center gap-1">
-                    <span class="material-icons text-sm">call</span>
-                    <span>Contact Us</span>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-sm font-medium text-gray-700 hover:text-cypis-primary transition">Home</a>
+                <a href="#solutions" class="text-sm font-medium text-gray-700 hover:text-cypis-primary transition">Solutions</a>
+                <a href="#services" class="text-sm font-medium text-gray-700 hover:text-cypis-primary transition">Services</a>
+                <a href="#about" class="text-sm font-medium text-gray-700 hover:text-cypis-primary transition">Company</a>
+                <a href="#contact" class="bg-cypis-primary text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md hover:bg-cypis-accent transition">
+                    Get in Touch
                 </a>
             </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden p-2">
+                <i class="fas fa-bars text-gray-700 text-xl"></i>
+            </button>
         </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 py-4 px-6 flex flex-col gap-3">
+            <a href="#home" class="text-sm font-medium text-gray-700 hover:text-cypis-primary py-2">Home</a>
+            <a href="#solutions" class="text-sm font-medium text-gray-700 hover:text-cypis-primary py-2">Solutions</a>
+            <a href="#services" class="text-sm font-medium text-gray-700 hover:text-cypis-primary py-2">Services</a>
+            <a href="#about" class="text-sm font-medium text-gray-700 hover:text-cypis-primary py-2">Company</a>
+            <a href="#contact" class="bg-cypis-primary text-white px-5 py-2 rounded-full text-sm font-semibold text-center">Get in Touch</a>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="gradient-hero text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/10"></div>
-        <div class="relative max-w-7xl mx-auto px-6 md:px-8 py-16 lg:py-24">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 text-center lg:text-left animate-fade-in">
-                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium border border-white/20">
-                        <span class="material-icons text-sm">auto_awesome</span>
-                        <span>Intelligent Solutions</span>
-                        <span class="w-1 h-1 bg-white/50 rounded-full"></span>
-                        <span>Data-Driven Future</span>
-                    </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-                        Transforming Data into<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cypis-light to-cypis-accent">Intelligent Insights</span>
-                    </h1>
-                    <p class="text-xl text-gray-200 max-w-2xl mx-auto lg:mx-0">
-                        We specialize in Data Analytics, Machine Learning, Software Development, and Professional Web Design. Powering businesses in Gulu, Uganda and beyond.
-                    </p>
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
-                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-2 flex items-center gap-2">
-                            <span class="material-icons">analytics</span>
-                            <span class="font-semibold">Data Analytics</span>
+    <!-- Hero Carousel Section -->
+    <section id="home" class="pt-20 relative">
+        <div class="relative h-screen overflow-hidden">
+            <!-- Carousel Images -->
+            <div id="carouselContainer" class="relative w-full h-full">
+                <!-- Slide 1 - Data Analytics -->
+                <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+                    <div class="absolute inset-0 bg-black/50 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&h=1080&fit=crop" alt="Data Analytics" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 z-20 flex items-center justify-center text-center">
+                        <div class="max-w-4xl px-6">
+                            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">Data Analytics</h1>
+                            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">Transform raw data into actionable intelligence that drives business growth</p>
+                            <a href="#contact" class="inline-flex items-center gap-2 bg-cypis-accent hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition">
+                                Get Started <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-2 flex items-center gap-2">
-                            <span class="material-icons">psychology</span>
-                            <span>Machine Learning</span>
-                        </div>
-                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-2 flex items-center gap-2">
-                            <span class="material-icons">code</span>
-                            <span>Software Dev</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
-                        <a href="#services" class="bg-cypis-accent hover:bg-amber-500 text-gray-900 font-bold px-8 py-3 rounded-full transition-all shadow-lg hover:shadow-xl inline-flex items-center gap-2">
-                            <span class="material-icons">rocket_launch</span>
-                            <span>Explore Services</span>
-                        </a>
-                        <a href="#contact" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/40 text-white font-medium px-7 py-3 rounded-full transition-all inline-flex items-center gap-2">
-                            <span class="material-icons">call</span>
-                            <span>Get in Touch</span>
-                        </a>
                     </div>
                 </div>
-                <div class="flex justify-center">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-6 w-full max-w-sm shadow-2xl border border-white/20 animate-float">
-                        <div class="text-center mb-4">
-                            <div class="flex justify-center">
-                                <span class="text-5xl font-black text-white">CYPIS</span>
-                            </div>
-                            <p class="text-xs text-cypis-light mt-1">DataTelligence & Intelligent Systems</p>
+                
+                <!-- Slide 2 - Artificial Intelligence -->
+                <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+                    <div class="absolute inset-0 bg-black/50 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1920&h=1080&fit=crop" alt="Artificial Intelligence" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 z-20 flex items-center justify-center text-center">
+                        <div class="max-w-4xl px-6">
+                            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Artificial Intelligence</h1>
+                            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">Intelligent systems that learn, adapt, and revolutionize your operations</p>
+                            <a href="#contact" class="inline-flex items-center gap-2 bg-cypis-accent hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition">
+                                Explore AI <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <p class="text-center font-semibold text-xl mt-2">Intelligent Systems</p>
-                        <p class="text-center text-sm text-gray-200">Powered by AI & Machine Learning</p>
-                        <hr class="my-3 border-white/20">
-                        <div class="flex justify-between text-sm">
-                            <div class="flex items-center gap-1"><span class="material-icons text-sm">location_on</span> <span>Gulu, Uganda</span></div>
-                            <div class="flex items-center gap-1"><span class="material-icons text-sm">phone</span> <span>+256 779753870</span></div>
-                            <div class="flex items-center gap-1"><span class="material-icons text-sm">email</span> <span>info@cypis.com</span></div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 - Machine Learning -->
+                <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+                    <div class="absolute inset-0 bg-black/50 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1591453089816-0fbb971b046c?w=1920&h=1080&fit=crop" alt="Machine Learning" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 z-20 flex items-center justify-center text-center">
+                        <div class="max-w-4xl px-6">
+                            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Machine Learning</h1>
+                            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">Predictive models that anticipate trends and optimize decision-making</p>
+                            <a href="#contact" class="inline-flex items-center gap-2 bg-cypis-accent hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition">
+                                Learn More <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <div class="mt-4 flex justify-center gap-2 text-xs text-gray-200">
-                            <span>📊 Data Analytics</span>
-                            <span>🤖 ML Models</span>
-                            <span>💻 Web Design</span>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 - Software Development -->
+                <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000">
+                    <div class="absolute inset-0 bg-black/50 z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop" alt="Software Development" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 z-20 flex items-center justify-center text-center">
+                        <div class="max-w-4xl px-6">
+                            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Software Development</h1>
+                            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">Custom solutions engineered for performance, scalability, and innovation</p>
+                            <a href="#contact" class="inline-flex items-center gap-2 bg-cypis-accent hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition">
+                                Build with Us <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-            <svg viewBox="0 0 1200 100" preserveAspectRatio="none" class="relative block w-full h-8 md:h-12">
-                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="white" opacity=".3"></path>
-                <path d="M0,0V15.81C13,21.25,27.93,25.67,44.24,28.45c69.76,10.19,140.09,9.45,210.06-1.45,69-10.73,136.2-30.58,206.52-35.28C532.38,11.89,612.3,25.61,691.46,38.75c79.16,13.14,158.1,15.55,237.33,6.55,46-5.25,90.43-17.89,135.22-31.42C1091,7.78,1155.52,0,1200,0V0Z" fill="white"></path>
-            </svg>
+            
+            <!-- Carousel Controls -->
+            <button id="prevBtn" class="carousel-btn absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm text-white flex items-center justify-center hover:bg-white/30 transition">
+                <i class="fas fa-chevron-left text-xl"></i>
+            </button>
+            <button id="nextBtn" class="carousel-btn absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm text-white flex items-center justify-center hover:bg-white/30 transition">
+                <i class="fas fa-chevron-right text-xl"></i>
+            </button>
+            
+            <!-- Dots Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+                <div class="dot w-3 h-3 rounded-full bg-white/50 transition-all" data-index="0"></div>
+                <div class="dot w-3 h-3 rounded-full bg-white/50 transition-all" data-index="1"></div>
+                <div class="dot w-3 h-3 rounded-full bg-white/50 transition-all" data-index="2"></div>
+                <div class="dot w-3 h-3 rounded-full bg-white/50 transition-all" data-index="3"></div>
+            </div>
         </div>
     </section>
 
-    <main class="max-w-7xl mx-auto px-6 md:px-8 py-16 lg:py-20">
-        
-        <!-- Services Section -->
-        <div id="services" class="scroll-mt-24 mb-20">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 bg-cypis-primary/10 text-cypis-primary px-4 py-1 rounded-full text-sm font-semibold">
-                    <span class="material-icons text-sm">workspace_premium</span>
-                    <span>What We Do</span>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-4">Our Core Services</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto mt-2">Delivering cutting-edge technology solutions tailored to your business needs</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1: Data Analytics -->
-                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover-lift service-card">
-                    <div class="w-14 h-14 bg-cypis-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <span class="material-icons text-cypis-primary text-3xl">analytics</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Data Analytics</h3>
-                    <p class="text-gray-600 mb-4">Transform raw data into actionable insights. We help you make data-driven decisions with advanced analytics and visualization.</p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> Business Intelligence</li>
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> Predictive Analytics</li>
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> Data Visualization</li>
-                    </ul>
+    <main>
+        <!-- Solutions Section -->
+        <section id="solutions" class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6 md:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-cypis-accent font-semibold text-sm uppercase tracking-wider">What We Do</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-4">Intelligent Solutions for<br>Modern Business</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto mt-4">Leverage cutting-edge technology to transform your operations and drive growth</p>
                 </div>
                 
-                <!-- Service 2: Data Collection -->
-                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover-lift service-card">
-                    <div class="w-14 h-14 bg-cypis-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <span class="material-icons text-cypis-primary text-3xl">database</span>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all service-card">
+                        <div class="w-14 h-14 bg-cypis-primary/10 rounded-xl flex items-center justify-center mb-5">
+                            <i class="fas fa-chart-line text-2xl text-cypis-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Data Analytics</h3>
+                        <p class="text-gray-600 text-sm">Turn complex data into actionable insights that drive strategic decisions.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Data Collection</h3>
-                    <p class="text-gray-600 mb-4">Comprehensive data gathering solutions using modern tools and methodologies for accurate and reliable datasets.</p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> Web Scraping</li>
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> Survey Integration</li>
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> IoT Data Collection</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 3: ML Models -->
-                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover-lift service-card">
-                    <div class="w-14 h-14 bg-cypis-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <span class="material-icons text-cypis-primary text-3xl">psychology</span>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all service-card">
+                        <div class="w-14 h-14 bg-cypis-primary/10 rounded-xl flex items-center justify-center mb-5">
+                            <i class="fas fa-brain text-2xl text-cypis-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">AI & ML</h3>
+                        <p class="text-gray-600 text-sm">Intelligent algorithms that learn from your data and predict outcomes.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Machine Learning Models</h3>
-                    <p class="text-gray-600 mb-4">Build custom ML models that learn from your data and deliver intelligent predictions and automation.</p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> Predictive Modeling</li>
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> NLP Solutions</li>
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> Computer Vision</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 4: Software Development -->
-                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover-lift service-card">
-                    <div class="w-14 h-14 bg-cypis-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <span class="material-icons text-cypis-primary text-3xl">code</span>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all service-card">
+                        <div class="w-14 h-14 bg-cypis-primary/10 rounded-xl flex items-center justify-center mb-5">
+                            <i class="fas fa-database text-2xl text-cypis-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Data Collection</h3>
+                        <p class="text-gray-600 text-sm">Comprehensive data gathering using modern tools and methodologies.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Software Development</h3>
-                    <p class="text-gray-600 mb-4">Custom software solutions designed to streamline your operations and boost productivity.</p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> Web Applications</li>
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> Mobile Apps</li>
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> Enterprise Solutions</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 5: Professional Web Design -->
-                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover-lift service-card">
-                    <div class="w-14 h-14 bg-cypis-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <span class="material-icons text-cypis-primary text-3xl">design_services</span>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all service-card">
+                        <div class="w-14 h-14 bg-cypis-primary/10 rounded-xl flex items-center justify-center mb-5">
+                            <i class="fas fa-code text-2xl text-cypis-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Software Dev</h3>
+                        <p class="text-gray-600 text-sm">Custom software solutions tailored to your unique business needs.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Professional Web Design</h3>
-                    <p class="text-gray-600 mb-4">Create stunning, responsive websites that capture your brand identity and engage your audience.</p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> Responsive Design</li>
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> E-commerce Solutions</li>
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> SEO Optimization</li>
-                    </ul>
-                </div>
-                
-                <!-- Service 6: Artificial Intelligence -->
-                <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover-lift service-card">
-                    <div class="w-14 h-14 bg-cypis-primary/10 rounded-xl flex items-center justify-center mb-4">
-                        <span class="material-icons text-cypis-primary text-3xl">auto_awesome</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Artificial Intelligence</h3>
-                    <p class="text-gray-600 mb-4">Leverage AI to automate processes, enhance decision-making, and create intelligent systems.</p>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> AI Strategy Consulting</li>
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> Intelligent Automation</li>
-                        <li class="flex items-center gap-2"><span class="material-icons text-cypis-primary text-sm">check_circle</span> AI Integration</li>
-                    </ul>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Gallery Section -->
-        <div class="mb-20">
-            <div class="text-center mb-10">
-                <div class="inline-flex items-center gap-2 bg-cypis-primary/10 text-cypis-primary px-4 py-1 rounded-full text-sm font-semibold">
-                    <span class="material-icons text-sm">photo_camera</span>
-                    <span>Gallery</span>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-4">Our Work in Action</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto mt-2">Transforming businesses through technology and innovation</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Image 1: Data Analytics Dashboard -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=350&fit=crop" alt="Data Analytics Dashboard" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-cypis-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <p class="text-white font-medium">Data Analytics & Visualization</p>
+        <!-- Stats Section -->
+        <section class="py-20 bg-gradient-to-r from-cypis-dark to-cypis-primary text-white">
+            <div class="max-w-7xl mx-auto px-6 md:px-8">
+                <div class="grid md:grid-cols-3 gap-12 text-center">
+                    <div>
+                        <div class="text-5xl font-bold mb-2 stat-number">50+</div>
+                        <div class="text-gray-300 uppercase text-sm tracking-wider">Projects Completed</div>
                     </div>
-                </div>
-                <!-- Image 2: ML Model Development -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&h=350&fit=crop" alt="Machine Learning Models" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-cypis-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <p class="text-white font-medium">Machine Learning & AI Development</p>
+                    <div>
+                        <div class="text-5xl font-bold mb-2 stat-number">30+</div>
+                        <div class="text-gray-300 uppercase text-sm tracking-wider">Happy Clients</div>
                     </div>
-                </div>
-                <!-- Image 3: Software Development -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=350&fit=crop" alt="Software Development" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-cypis-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <p class="text-white font-medium">Custom Software Development</p>
-                    </div>
-                </div>
-                <!-- Image 4: Web Design -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=500&h=350&fit=crop" alt="Web Design" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-cypis-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <p class="text-white font-medium">Professional Web Design</p>
-                    </div>
-                </div>
-                <!-- Image 5: Data Collection -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=350&fit=crop" alt="Data Collection" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-cypis-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <p class="text-white font-medium">Advanced Data Collection Tools</p>
-                    </div>
-                </div>
-                <!-- Image 6: Team at Work -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover-lift">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&h=350&fit=crop" alt="Team at Work" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-cypis-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                        <p class="text-white font-medium">Collaborative Innovation</p>
+                    <div>
+                        <div class="text-5xl font-bold mb-2 stat-number">5+</div>
+                        <div class="text-gray-300 uppercase text-sm tracking-wider">Years Experience</div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24">
+            <div class="max-w-7xl mx-auto px-6 md:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="text-cypis-accent font-semibold text-sm uppercase tracking-wider">Our Services</span>
+                        <h2 class="text-4xl font-bold text-gray-900 mt-4 mb-6">Comprehensive Technology Solutions</h2>
+                        <p class="text-gray-600 mb-8">We provide end-to-end technology services that empower businesses to harness the power of data and artificial intelligence.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-check-circle text-cypis-accent text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Data Analytics & BI</h4>
+                                    <p class="text-gray-600 text-sm">Interactive dashboards and reports that reveal hidden patterns and opportunities.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-check-circle text-cypis-accent text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Machine Learning Models</h4>
+                                    <p class="text-gray-600 text-sm">Predictive analytics, computer vision, NLP solutions tailored to your needs.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-check-circle text-cypis-accent text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Custom Software Development</h4>
+                                    <p class="text-gray-600 text-sm">Scalable web and mobile applications built with modern technologies.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-check-circle text-cypis-accent text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Professional Web Design</h4>
+                                    <p class="text-gray-600 text-sm">Responsive, user-friendly websites that convert visitors into customers.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=500&fit=crop" alt="Team working" class="rounded-2xl shadow-2xl">
+                        <div class="absolute -bottom-6 -left-6 bg-cypis-accent text-white p-4 rounded-xl shadow-lg">
+                            <i class="fas fa-rocket text-3xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- About Section -->
-        <div id="about" class="scroll-mt-24 mb-20">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <div class="inline-flex items-center gap-2 bg-cypis-primary/10 text-cypis-primary px-3 py-1 rounded-full text-sm font-semibold">
-                        <span class="material-icons text-sm">info</span>
-                        <span>About Us</span>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Who We Are</h2>
+        <section id="about" class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6 md:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div>
-                        <span class="text-2xl font-black text-cypis-primary">CYPIS</span>
-                        <span class="text-sm text-gray-500 ml-1">DataTelligence & Intelligent Systems</span>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=500&fit=crop" alt="Team collaboration" class="rounded-2xl shadow-2xl">
                     </div>
-                    <p class="text-gray-600 leading-relaxed">CYPIS DataTelligence and Intelligent Systems is a premier technology firm based in Gulu, Uganda. We specialize in delivering cutting-edge data analytics, machine learning solutions, and software development services that empower businesses to thrive in the digital age.</p>
-                    <p class="text-gray-600 leading-relaxed">Our team combines technical expertise with deep industry knowledge to create intelligent systems that solve real-world problems. We are committed to driving innovation and fostering digital transformation across East Africa.</p>
-                    
-                    <div class="flex items-center gap-4 pt-4">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-cypis-primary">50+</div>
-                            <div class="text-sm text-gray-500">Projects Completed</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-cypis-primary">30+</div>
-                            <div class="text-sm text-gray-500">Happy Clients</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-cypis-primary">5+</div>
-                            <div class="text-sm text-gray-500">Years Experience</div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gradient-to-r from-cypis-primary/5 to-cypis-secondary/5 rounded-2xl p-5 border border-cypis-primary/10">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="material-icons text-cypis-primary">person</span>
-                            <h4 class="font-bold text-gray-800">CEO & Founder</h4>
-                        </div>
-                        <p class="text-gray-700 font-medium">Wokorach Fred Lukwiya</p>
-                        <p class="text-sm text-gray-500">Leading innovation in data intelligence and intelligent systems across Uganda</p>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-cypis-primary/10 rounded-full blur-2xl"></div>
-                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-cypis-secondary/10 rounded-full blur-2xl"></div>
-                    <div class="relative bg-gradient-to-br from-cypis-primary to-cypis-secondary rounded-3xl p-1">
-                        <div class="bg-white rounded-3xl p-6">
-                            <div class="text-center mb-4">
-                                <span class="text-4xl font-black text-cypis-primary">CYPIS</span>
-                                <p class="text-xs text-gray-500 mt-1">DataTelligence & Intelligent Systems</p>
+                    <div>
+                        <span class="text-cypis-accent font-semibold text-sm uppercase tracking-wider">About CYPIS</span>
+                        <h2 class="text-4xl font-bold text-gray-900 mt-4 mb-6">Powering Africa's Digital Transformation</h2>
+                        <p class="text-gray-600 mb-4">CYPIS DataTelligence and Intelligent Systems is a premier technology firm based in Gulu, Uganda. We specialize in delivering cutting-edge data analytics, machine learning solutions, and software development services that empower businesses to thrive in the digital age.</p>
+                        <p class="text-gray-600 mb-6">Our team combines technical expertise with deep industry knowledge to create intelligent systems that solve real-world problems across East Africa and beyond.</p>
+                        
+                        <div class="flex items-center gap-4 pt-4 border-t border-gray-200">
+                            <div class="w-12 h-12 bg-cypis-primary/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-user-tie text-cypis-primary"></i>
                             </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="text-center p-4 bg-gray-50 rounded-xl">
-                                    <span class="material-icons text-cypis-primary text-3xl">analytics</span>
-                                    <p class="text-sm font-medium mt-2">Data-Driven</p>
-                                </div>
-                                <div class="text-center p-4 bg-gray-50 rounded-xl">
-                                    <span class="material-icons text-cypis-primary text-3xl">psychology</span>
-                                    <p class="text-sm font-medium mt-2">AI-Powered</p>
-                                </div>
-                                <div class="text-center p-4 bg-gray-50 rounded-xl">
-                                    <span class="material-icons text-cypis-primary text-3xl">rocket_launch</span>
-                                    <p class="text-sm font-medium mt-2">Innovative</p>
-                                </div>
-                                <div class="text-center p-4 bg-gray-50 rounded-xl">
-                                    <span class="material-icons text-cypis-primary text-3xl">handshake</span>
-                                    <p class="text-sm font-medium mt-2">Client-Focused</p>
-                                </div>
+                            <div>
+                                <p class="font-bold text-gray-900">Wokorach Fred Lukwiya</p>
+                                <p class="text-sm text-gray-500">CEO & Founder</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Contact Section -->
-        <div id="contact" class="scroll-mt-24 bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
-            <div class="grid md:grid-cols-2">
-                <div class="bg-gradient-to-br from-cypis-primary to-cypis-secondary p-8 md:p-10 text-white">
-                    <div class="mb-4">
-                        <span class="text-4xl font-black">CYPIS</span>
+        <section id="contact" class="py-24">
+            <div class="max-w-7xl mx-auto px-6 md:px-8">
+                <div class="bg-gradient-to-r from-cypis-dark to-cypis-primary rounded-3xl overflow-hidden shadow-2xl">
+                    <div class="grid md:grid-cols-2">
+                        <div class="p-12 text-white">
+                            <i class="fas fa-envelope text-4xl mb-4 text-cypis-accent"></i>
+                            <h3 class="text-3xl font-bold mb-4">Let's Work Together</h3>
+                            <p class="text-gray-300 mb-8">Ready to transform your business with intelligent solutions? Get in touch with us today.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-phone-alt text-cypis-accent"></i>
+                                    <span>+256 779753870</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-envelope text-cypis-accent"></i>
+                                    <span>info@cypis.com</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-map-marker-alt text-cypis-accent"></i>
+                                    <span>Gulu City, Uganda</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-12">
+                            <form id="contactForm" action="#" method="POST">
+                                <div class="grid gap-4">
+                                    <div>
+                                        <input type="text" placeholder="Full Name *" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cypis-primary focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <input type="email" placeholder="Email Address *" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cypis-primary focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <input type="tel" placeholder="Phone Number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cypis-primary focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cypis-primary focus:border-transparent">
+                                            <option>Data Analytics</option>
+                                            <option>Machine Learning</option>
+                                            <option>Software Development</option>
+                                            <option>Web Design</option>
+                                            <option>AI Solutions</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <textarea rows="4" placeholder="Your Message *" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cypis-primary focus:border-transparent"></textarea>
+                                    </div>
+                                    <button type="submit" class="bg-cypis-primary hover:bg-cypis-accent text-white font-semibold py-3 rounded-lg transition">
+                                        Send Message <i class="fas fa-paper-plane ml-2"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <span class="material-icons text-4xl mb-2">contact_mail</span>
-                    <h3 class="text-2xl font-bold mb-2">Let's Work Together</h3>
-                    <p class="text-gray-200 mb-6">Ready to transform your business with intelligent solutions? Get in touch with us today.</p>
-                    <div class="space-y-4 text-sm">
-                        <div class="flex items-center gap-3">
-                            <span class="material-icons text-cypis-light">phone</span>
-                            <span>+256 779753870</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="material-icons text-cypis-light">email</span>
-                            <span>info@cypis.com</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="material-icons text-cypis-light">location_on</span>
-                            <span>Gulu City, Uganda</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="material-icons text-cypis-light">schedule</span>
-                            <span>Mon-Fri: 8:00 AM - 6:00 PM</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-8 md:p-10">
-                    <form id="contactForm" action="#" method="POST">
-                        <div class="grid gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                                <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cypis-primary focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                                <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cypis-primary focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                                <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cypis-primary focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Service Interested In</label>
-                                <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cypis-primary focus:border-transparent">
-                                    <option>Data Analytics</option>
-                                    <option>Data Collection</option>
-                                    <option>Machine Learning Models</option>
-                                    <option>Software Development</option>
-                                    <option>Web Design</option>
-                                    <option>Artificial Intelligence</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Your Message *</label>
-                                <textarea rows="3" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cypis-primary focus:border-transparent"></textarea>
-                            </div>
-                            <button type="submit" class="bg-cypis-primary hover:bg-cypis-secondary text-white font-semibold py-3 rounded-lg transition flex items-center justify-center gap-2">
-                                <span class="material-icons">send</span>
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-10 border-t border-gray-800">
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-6 md:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <div class="mb-3">
-                        <span class="text-2xl font-black text-white">CYPIS</span>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-cypis-primary to-cypis-accent rounded-xl flex items-center justify-center">
+                            <span class="text-white font-bold">C</span>
+                        </div>
+                        <span class="font-bold text-white ml-2">CYPIS</span>
                     </div>
-                    <p class="text-sm text-gray-400">DataTelligence & Intelligent Systems</p>
-                    <p class="text-xs text-gray-500 mt-1">Intelligent Systems for a Data-Driven Future</p>
+                    <p class="text-sm">Intelligent Systems for a Data-Driven Future</p>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-3">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#solutions" class="hover:text-white transition">Solutions</a></li>
                         <li><a href="#services" class="hover:text-white transition">Services</a></li>
-                        <li><a href="#about" class="hover:text-white transition">About</a></li>
-                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#about" class="hover:text-white transition">Company</a></li>
                     </ul>
                 </div>
                 <div>
@@ -536,11 +472,10 @@
                         <li>Machine Learning</li>
                         <li>Software Development</li>
                         <li>Web Design</li>
-                        <li>AI Solutions</li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-3">Contact Info</h4>
+                    <h4 class="text-white font-semibold mb-3">Contact</h4>
                     <ul class="space-y-2 text-sm">
                         <li>📍 Gulu City, Uganda</li>
                         <li>📞 +256 779753870</li>
@@ -549,13 +484,79 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-6 text-center text-sm">
-                <p>© 2025 CYPIS DataTelligence and Intelligent Systems. All rights reserved.</p>
-                <p class="text-xs text-gray-500 mt-1">CEO: Wokorach Fred Lukwiya</p>
+                <p>© 2025 CYPIS DataTelligence & Intelligent Systems. All rights reserved.</p>
+                <p class="text-xs text-gray-600 mt-1">CEO: Wokorach Fred Lukwiya</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Carousel Functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('bg-white');
+                    dot.classList.remove('bg-white/50');
+                } else {
+                    dot.classList.remove('bg-white');
+                    dot.classList.add('bg-white/50');
+                }
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        document.getElementById('nextBtn')?.addEventListener('click', nextSlide);
+        document.getElementById('prevBtn')?.addEventListener('click', prevSlide);
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+        
+        // Auto slide every 5 seconds
+        let autoSlideInterval = setInterval(nextSlide, 5000);
+        
+        // Pause auto-slide on hover
+        const carouselContainer = document.getElementById('carouselContainer');
+        carouselContainer?.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+        
+        carouselContainer?.addEventListener('mouseleave', () => {
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // Show first slide
+        showSlide(0);
+        
+        // Form submission
         document.getElementById('contactForm')?.addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you! Your message has been sent. We will get back to you within 24 hours.');
